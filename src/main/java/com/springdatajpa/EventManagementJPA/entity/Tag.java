@@ -1,34 +1,28 @@
 package com.springdatajpa.EventManagementJPA.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
-@Setter
+@ToString
 @Builder
-public class User {
+public class Tag {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 20)
     private String name;
 
-    @Column(length = 40, unique = true)
-    private String email;
-
-    @Enumerated(EnumType.STRING)
-    private Status staus;
-
-    @OneToMany(mappedBy = "user")
+    @ManyToMany(mappedBy = "tags")
     @ToString.Exclude
     private List<Event> events = new ArrayList<>();
 }
