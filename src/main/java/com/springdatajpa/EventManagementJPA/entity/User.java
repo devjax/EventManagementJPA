@@ -26,7 +26,7 @@ public class User {
     private String email;
 
     @Enumerated(EnumType.STRING)
-    private Status staus;
+    private Status status;
 
     @OneToMany(mappedBy = "user")
     @ToString.Exclude

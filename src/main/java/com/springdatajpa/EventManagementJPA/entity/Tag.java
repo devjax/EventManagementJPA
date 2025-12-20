@@ -1,10 +1,7 @@
 package com.springdatajpa.EventManagementJPA.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +11,8 @@ import java.util.List;
 @AllArgsConstructor
 @ToString
 @Builder
+@Getter
+@Setter
 public class Tag {
 
     @Id
